@@ -10,3 +10,4 @@
 * [给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。](/algorithm/code/array/lesson1.js)
 * [卡牌分组](/algorithm/code/array/lesson2.js)
 * [格雷编码](/algorithm/code/array/lesson3.js)
+* [种花问题](/algorithm/code/array/lesson4.js)
