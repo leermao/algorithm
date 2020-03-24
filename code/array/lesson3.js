@@ -23,6 +23,4 @@ var grayCode = function (n) {
   return make(n).map(item => parseInt(item, 2))
 }
 
-console.log(grayCode(2))
-
 export default grayCode
