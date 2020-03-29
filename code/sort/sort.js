@@ -27,3 +27,26 @@ export const seletcion = arr => {
   }
   return arr
 }
+
+export const quick = (arr) => {
+  const quicksort = (arr) => {
+    if (arr.length < 2) {
+      return arr
+    }
+
+    const left = []
+    const right = []
+    const flag = arr[0]
+
+    for (let index = 1; index < arr.length; index++) {
+      if (arr[index] > flag) {
+        right.push(arr[index])
+      } else {
+        left.push(arr[index])
+      }
+    }
+
+    return quicksort(left).concat(flag, quicksort(right))
+  }
+  return quicksort(arr)
+}
