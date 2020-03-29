@@ -28,6 +28,7 @@ export const seletcion = arr => {
   return arr
 }
 
+// 缺点是消耗内存
 export const quick = (arr) => {
   const quicksort = (arr) => {
     if (arr.length < 2) {
@@ -49,4 +50,38 @@ export const quick = (arr) => {
     return quicksort(left).concat(flag, quicksort(right))
   }
   return quicksort(arr)
+}
+
+export const quick1 = (arr) => {
+  const swap = (arr, a, b) => {
+    [arr[a], arr[b]] = [arr[b], arr[a]]
+    return arr
+  }
+
+  const findCenter = (arr, left, right) => {
+    const flag = arr[left]
+    let k = left + 1
+
+    for (let i = k; i <= right; i++) {
+      if (arr[i] < flag) {
+        swap(arr, k, i)
+        k++
+      }
+    }
+    swap(arr, left, k - 1)
+
+    return k
+  }
+
+  const sort = (arr, left, right) => {
+    if (left < right) {
+      let center = findCenter(arr, left, right)
+      sort(arr, left, center - 1)
+      sort(arr, center, right)
+    }
+  }
+
+  sort(arr, 0, arr.length - 1)
+
+  return arr
 }
