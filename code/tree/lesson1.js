@@ -81,4 +81,14 @@ export default class BinaryTree {
 
     return null
   }
+
+  static walk (root) {
+    if (!root.left || !root.right) {
+      return true
+    } else if ((root.left && root.val < root.left.val) || (root.right && root.val > root.right.val)) {
+      return false
+    } else {
+      return BinaryTree.walk(root.left) && BinaryTree.walk(root.right)
+    }
+  }
 }
