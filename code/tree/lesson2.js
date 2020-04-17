@@ -25,6 +25,7 @@ var buildTree = function (preorder, inorder) {
       const headVal = preorder.shift()
       const head = new TreeNode(headVal)
 
+      // 这部分可以优化查找 比较耗时
       const findHeadIndex = inorder.findIndex(item => item === headVal)
       if (findHeadIndex > -1) {
         const leftPreorder = preorder.splice(0, findHeadIndex)
@@ -45,3 +46,5 @@ var buildTree = function (preorder, inorder) {
 
   return createTree(preorder, inorder)
 }
+
+export default buildTree
