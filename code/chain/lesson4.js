@@ -15,27 +15,27 @@
  */
 
 var getKthFromEnd = function (head, k) {
-  let firstHead = head;
-  let secondHead = head;
+  let firstHead = head
+  let secondHead = head
 
   if (head.val === null) {
-    return null;
+    return null
   }
 
   for (let i = 0; i < k; i++) {
     if (secondHead === null) {
-      return null;
+      return null
     } else {
-      secondHead = secondHead.next;
+      secondHead = secondHead.next
     }
   }
 
   while (secondHead) {
-    secondHead = secondHead.next;
-    firstHead = firstHead.next;
+    secondHead = secondHead.next
+    firstHead = firstHead.next
   }
 
-  return firstHead;
-};
+  return firstHead
+}
 
-export default getKthFromEnd;
+export default getKthFromEnd
